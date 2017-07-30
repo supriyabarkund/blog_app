@@ -1,0 +1,11 @@
+
+<section>
+	<div class="container pdnt100">
+		<h1>Blog Page</h1>	
+		<% @siteblog.each do | siteblog | %>
+			<img src="<%= siteblog.image.url %>" width=100 height=100 /><br><br>
+			<a href="<%= url_blog_detail(siteblog.id) %>"><%= siteblog.title %></a><br><br>
+			<%= siteblog.desc %><br><br>
+		<% end %>
+	</div>
+</section>

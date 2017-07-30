@@ -1,0 +1,47 @@
+<%= form_for @siteblog, :html => { :multipart=> true } do |f| %>
+  <% if @siteblog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@siteblog.errors.count, "error") %> prohibited this siteblog from being saved:</h2>
+
+      <ul>
+      <% @siteblog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :desc %>
+    <%= f.text_field :desc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longdesc %>
+    <%= f.text_area :longdesc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.check_box :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

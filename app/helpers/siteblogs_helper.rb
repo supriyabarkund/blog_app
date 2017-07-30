@@ -1,0 +1,2 @@
+module SiteblogsHelper
+end

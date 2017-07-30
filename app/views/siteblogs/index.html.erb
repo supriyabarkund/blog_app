@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Siteblogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Longdesc</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @siteblogs.each do |siteblog| %>
+      <tr>
+        <td><img src="<%= siteblog.image.url %>" width=100 height=100 /></td>
+        <td><%= siteblog.title %></td>
+        <td><%= siteblog.desc %></td>
+        <td><%= siteblog.longdesc %></td>
+        <td><%= siteblog.status %></td>
+        <td><%= siteblog.date %></td>
+        <td><%= link_to 'Show', siteblog %></td>
+        <td><%= link_to 'Edit', edit_siteblog_path(siteblog) %></td>
+        <td><%= link_to 'Destroy', siteblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Siteblog', new_siteblog_path %>
